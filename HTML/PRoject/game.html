@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Whack-a-Gaskin!</title>
+  <style>
+    body {
+      background-color: #222831;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 3rem;
+    }
+
+    #game-area {
+      margin: 20px auto;
+      width: 450px;
+      height: 450px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+
+    .hole {
+      background-color: #393e46;
+      border-radius: 50%;
+      position: relative;
+      width: 140px;
+      height: 140px;
+      overflow: hidden;
+      box-shadow: inset 0 0 10px #000;
+    }
+
+    .mole {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      transition: top 0.2s;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .up .mole {
+      top: 0;
+    }
+
+    #score {
+      font-size: 24px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #00adb5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #007a80;
+    }
+  </style>
+</head>
+<body>
+  <h1>Whack the Face!</h1>
+  <p id="intro-text" style="font-size: 20px; color: #f8c471;">
+    Whack the faces to get the final answer key... maybe 😉
+  </p>  
+  <p id="score">Score: 0</p>
+  <div id="game-area">
+    <div class="hole"><img src="../Images/Gaskin.jpg" class="mole" onclick="whack()" /></div>
+    <div class="hole"><img src="../Images/gaskin 2.jpg" class="mole" onclick="whack()" /></div>
+    <div class="hole"><img src="../Images/Gaskin 3.png" class="mole" onclick="whack()" /></div>
+    <div class="hole"><img src="../Images/Gaskin 4.png" class="mole" onclick="whack()" /></div>
+    <div class="hole"><img src="../Images/Gaskin.jpg" class="mole" onclick="whack()" /></div>
+    <div class="hole"><img src="../Images/Spiderman.webp" class="mole" onclick="whack()" /></div>
+    <div class="hole"><img src="../Images/gaskin 2.jpg" class="mole" onclick="whack()" /></div>
+    <div class="hole"><img src="../Images/Gaskin 3.png" class="mole" onclick="whack()" /></div>
+    <div class="hole"><img src="../Images/Gaskin 4.png" class="mole" onclick="whack()" /></div>
+  </div>
+  <button onclick="startGame()">Start Game</button>
+
+  <audio id="whackSound" src="../PRoject/Gaskin sound11.m4a" preload="auto"></audio>
+
+  <script>
+    let score = 0;
+    let current;
+    let timeUp = false;
+    let countdown;
+    const gameDuration = 15; // in seconds
+  
+    const holes = document.querySelectorAll('.hole');
+    const scoreDisplay = document.getElementById('score');
+    const sound = document.getElementById('whackSound');
+  
+    // Create and add a timer display
+    const timerDisplay = document.createElement('p');
+    timerDisplay.id = "timer";
+    timerDisplay.style.fontSize = "20px";
+    timerDisplay.textContent = "Time: " + gameDuration;
+    document.body.insertBefore(timerDisplay, document.getElementById('game-area'));
+  
+    // Create and add a message display
+    const resultMessage = document.createElement('p');
+    resultMessage.id = "result";
+    resultMessage.style.fontSize = "22px";
+    resultMessage.style.marginTop = "10px";
+    resultMessage.style.color = "#f96";
+    document.body.appendChild(resultMessage);
+  
+    function randomHole() {
+      const idx = Math.floor(Math.random() * holes.length);
+      return holes[idx];
+    }
+  
+    function showMole() {
+      const hole = randomHole();
+      current = hole;
+      hole.classList.add('up');
+  
+      setTimeout(() => {
+        hole.classList.remove('up');
+        if (!timeUp) showMole();
+      }, Math.random() * 800 + 300);
+    }
+  
+    function whack() {
+      if (!current || !current.classList.contains('up')) return;
+      score++;
+      scoreDisplay.textContent = 'Score: ' + score;
+      sound.currentTime = 0;
+      sound.play();
+      current.classList.remove('up');
+      current = null;
+    }
+  
+    function startGame() {
+      score = 0;
+      timeUp = false;
+      scoreDisplay.textContent = 'Score: 0';
+      resultMessage.textContent = '';
+      timerDisplay.textContent = "Time: " + gameDuration;
+      showMole();
+      startTimer(gameDuration);
+      setTimeout(() => {
+        timeUp = true;
+        endGame();
+      }, gameDuration * 1000);
+    }
+  
+    function startTimer(seconds) {
+      let timeLeft = seconds;
+      clearInterval(countdown);
+      countdown = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = "Time: " + timeLeft;
+        if (timeLeft <= 0) clearInterval(countdown);
+      }, 1000);
+    }
+  
+    function endGame() {
+      if (score >= 10) {
+        resultMessage.textContent = "You win! Here's the final answer key: Just kidding. No cheating 😎.";
+      } else {
+        resultMessage.textContent = "Time's up! No answer key for cheaters. 😬";
+      }
+    }
+  </script>

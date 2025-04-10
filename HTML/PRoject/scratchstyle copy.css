@@ -1,0 +1,59 @@
+
+.content {
+    background-color: #2843ae;
+
+    background-image: url("../Images/Disney background.jpg");
+    padding: 20px;
+     color: #ca4d4d;
+     position: absolute;
+}
+.header {
+    right: 5px;
+    left: 5px;
+    top: 5px;
+    height: 100px;
+    padding: 20px;
+    align-items: left;
+    justify-content: space-between;
+}
+.subheader a {
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.leftmenu {
+    left: 5px;
+    top: 5px;
+    bottom: 39px;
+    padding: 20px;
+    width: 114px;
+}
+.rightmenu {
+    right: 5px;
+    top: 5px;
+    bottom: 39px;
+    padding: 20px;
+    width: 114px;
+}
+.mainbody {
+    left: 5px;
+    top: 114px;
+    bottom: 60px;
+    padding: 20px;
+    width: 114px;
+}
+
+.footer {
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    height: 100px;
+    padding: 20px;
+}
+    .homebg {
+        background-image: url('../Images/PLanepic.png');
+        background-position: repeat;
+        background-repeat: repeat;
+        background-color: #2843ae;
+    /* background-repeat: ; */
+}

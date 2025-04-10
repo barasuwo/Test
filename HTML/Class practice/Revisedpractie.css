@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(252, 250, 250);
+    font-family: Papyrus, 'Times New Roman', Times, serif;
+    background-image: url('../startbootstrap-grayscale-gh-pages/assets/img/gatebridge.jpg');
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    /* z-index on body isn’t necessary here */
+}
+
+/* All common boxes share these (we still use absolute positioning) */
+.common {
+    border: 2px solid white;
+    position: absolute;
+}
+
+.header {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    height: 100px;
+    border-bottom: solid 1px gray;
+    z-index: 2;
+}
+
+/* Main body now extends from left edge and stops before the right menu */
+.mainbody {
+    top: 114px;
+    left: 5px;
+    right: 160px;  /* leave room for the rightmenu */
+    bottom: 39px;
+    padding-right: 5px;
+    overflow-y: auto;
+}
+
+/* Updated rightmenu: fixed to right, auto height, enough width for navigation + info */
+.rightmenu {
+    top: 114px;
+    right: 5px;  /* fixed the typo from 5x to 5px */
+    width: 150px;
+    /* Remove explicit height to allow content to expand */
+    border-left: solid 1px gray;
+    z-index: 1;
+    padding: 5px;
+}
+
+/* Footer stays fixed at the bottom */
+.footer {
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    height: 25px;
+    font-size: 8px;
+    color: rgb(41, 44, 44);
+    text-align: center;
+    padding-top: 15px;
+    position: fixed;
+    z-index: 1;
+}
+
+/* Float the subheader links to the right in the header */
+.subheader {
+    float: right;
+}

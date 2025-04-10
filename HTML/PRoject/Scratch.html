@@ -1,0 +1,117 @@
+<!-- This page must be created from a blank HTML file.
+It can be about anything. Pick a hobby, or a passion, or something that fascinates you.
+It must include the following as a demonstration of your ability to write HTML and CSS:
+-.An unordered list embedded in an ordered list (or the other way around)
+-.At least one image not from the Bootstrap theme (feel free to have many more)
+-.An embedded YouTube video (we intentionally didn’t teach you this, so you would have to figure it out—good learning experience)
+-An on-page anchor
+-A custom background color or background image
+-You also need to link to (and apply) a stylesheet that you have created from scratch. This stylesheet should include:
+At least four style definitions (it is possible you will have many more than four styles)
+-Styles that specify font color
+-Styles that specify font family
+-At least three divs for positioning and styling blocks of content in the HTML page
+-A live and interactive embedded Tableau graph (not just a picture of one).
+This graph can be about anything. It doesn’t have to be a graph you created, although it certainly can be.
+A quick Google search will show you where to find cool Tableau visualizations.
+-Navigation back to the professional-looking pages.
+Your professional-looking pages do not need to link to the scratch page (but you will submit the URL to your scratch page). This way you can use the professional side for whatever you want without worrying someone might find this scratch page… 
+If you are a graduate student, you must also include a link on this scratch page to your extra page (see below). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disney's Fall and Rise</title>
+  <link rel="stylesheet" href="css/scratchstyle.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+      <h1>Disney's Fall and Rise</h1>
+      <nav class="navbar">
+        <a href="#intro">Intro</a>
+        <a href="#high">Top Films</a>
+        <a href="#low">Least Engaging</a>
+        <a href="#videos">Videos</a>
+        <a href="#tableau">Data</a>
+        <a href="#pip">whhee</a>
+      </nav>
+    </header>
+    <main class="mainbody">
+      <section id="intro" class="section">
+        <h2>Introduction</h2>
+        <p>
+          Step inside a vault of childhood memories, global blockbusters, and plot twists that still haunt grown adults. Disney films aren’t just movies — they’re emotionally weaponized animations engineered to make you cry, sing, and buy merchandise. This site explores the most (and least) engrossing Disney films: the ones that defined generations... and the ones that barely defined their own runtime.
+        </p>
+      </section>
+      <section id="high" class="section alt">
+        <h2>Highest Engaging Films</h2>
+        <h3>The Lion King (1994)</h3>
+        <p>With its Shakespearean plot and Elton John's soundtrack, *The Lion King* emotionally wrecked and empowered a generation. Simba’s guilt arc and Mufasa’s death still hurt.</p>
+        <h3>Frozen (2013)</h3>
+        <p>Frozen didn’t just break the ice — it shattered pop culture. “Let It Go” lives rent-free in your head, and Elsa said "I don’t need a man," then built a palace. Iconic.</p>
+        <h3>Coco (2017)</h3>
+        <p>Bright, emotional, and culturally rich — *Coco* made you call your grandma and cry over a guitar. Pixar outdid themselves with this one.</p>
+      </section>
+      <section id="low" class="section">
+        <h2>Lowest Engaging Films</h2>
+        <h3>Chicken Little (2005)</h3>
+        <p>Confused plot. Outdated humor. The sky fell, and so did Disney’s reputation... until they bounced back.</p>
+        <h3>Tinker Bell and the Lost Napkin (Totally Fake)</h3>
+        <p>A 19-minute whirlwind of sparkles and nothing else. Probably written by an AI trained on glitter and yawns.</p>
+        <h3>Lava: The Musical</h3>
+        <p>A lava rock falls in love. Nothing else happens. But hey — that ukulele jam goes hard.</p>
+      </section>
+      <section id="tableau" class="section">
+        <h2>Disney Movie Data</h2>
+        <div class='tableauPlaceholder' id='viz1744303806928'>
+          <noscript><a href='#'><img alt=' ' src='https://public.tableau.com/static/images/HR/HRSBJSJKQ/1_rss.png' style='border: none' /></a></noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='path' value='shared&#47;HRSBJSJKQ' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/HR/HRSBJSJKQ/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+          </object>
+        </div>
+      </section>
+      <section id="videos" class="section alt">
+        <h2>Watch the Magic</h2>
+        <div class="video-grid">
+          <iframe src="https://www.youtube.com/embed/RiSe-GIXRHQ" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/9q1JgBxrhpk" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/hBhttWPuYpY" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      Copyright &copy; | Disney is Terrible | Created by Thomas Barrus
+    </footer>
+  </div>
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1744303806928');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    if (divElement.offsetWidth > 800) {
+      vizElement.style.width = '1000px';
+      vizElement.style.height = '727px';
+    } else if (divElement.offsetWidth > 500) {
+      vizElement.style.width = '1000px';
+      vizElement.style.height = '727px';
+    } else {
+      vizElement.style.width = '100%';
+      vizElement.style.height = '1177px';
+    }
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-image: url("../Images/Disney background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+  
+  .wrapper {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #00274D;
+    border-bottom: 3px solid #f8f8f8;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .navbar {
+    margin-top: 10px;
+  }
+  
+  .navbar a {
+    margin: 0 15px;
+    color: #f8f8f8;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  .mainbody {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .section {
+    padding: 30px 20px;
+    margin-bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-left: 5px solid #f8c471;
+  }
+  
+  .section.alt {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #82E0AA;
+  }
+  
+  .section h2 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .video-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .video-grid iframe {
+    width: 300px;
+    height: 170px;
+    border: 3px solid #fff;
+    border-radius: 8px;
+  }
+  
+  .footer {
+    text-align: center;
+    background-color: #001f3f;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 60px;
+  }
+  .homebg {
+    background-image: url('../Images/Disney\ background.jpg');
+    background-position: repeat;
+    background-repeat: repeat;
+    background-color: #2843ae;
+/* background-repeat: ; */
+}
+  
+  

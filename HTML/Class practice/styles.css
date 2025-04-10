@@ -1,0 +1,46 @@
+
+
+body { 
+           font-family : Papyrus, 'Times New Roman', Times, serif;
+           background-color: rgb(0, 114, 0);
+           color:rgb(166, 206, 245)
+          }
+          a{
+            color: rgb(255, 255, 255);
+          }
+          h1, h2{
+            text-align: center;
+          }
+          img{
+            border: 5px solid rgb(214, 50, 50);
+            padding:5px; 
+            height: 250px;
+           /* margin: auto;
+           display:block; */
+          }
+          .rizz{
+            font-family: chiller;
+            color:honeydew;
+            border: 5px dashed yellow;
+            font-size: xx-large;
+            font-weight: bolder;
+            background-color: bisque;
+          }
+          .rizzw{
+            border: 2px solid #ffffff;
+            padding: 0caption;
+            margin:auto;
+            display: block;
+          }
+          .rizz:hover{
+            font-size: 450;
+            color: blueviolet;
+            border: 5px solid rgb(214, 50, 50);
+          }
+          li{
+            width: fit-content
+          }
+          li:hover{
+            text-decoration: blueviolet;
+            background-color: royalblue;
+          }
